@@ -40,6 +40,7 @@ slotRacingSystemApp.controller('MainController', function($scope, $interval) {
         minutes2 = 0;
         
         $scope.running = true;
+        $scope.haveWinner = false;
         $scope.laps1 = 0;
         $scope.laps2 = 0;
 
