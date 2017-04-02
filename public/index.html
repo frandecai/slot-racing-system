@@ -1,0 +1,141 @@
+<!DOCTYPE html>  
+<html lang="es">  
+<head>  
+    <meta charset="UTF-8">
+    <title>SLOT LAP COUNTER</title>
+    <!-- Libraries scripts-->
+    <script src="js/libs/jquery-3.2.0.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/libs/angular.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>  
+<body ng-app="slotRacingSystemApp" ng-controller="MainController">
+    <div class="content container">
+        <div class="row title">
+            <div class="text-center">
+                <h1 class="racing-sans-one">SLOT RACING SYSTEM</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-md-4">
+                <div class="pilot">
+                    <div class="text-center">
+                        <label class="racing-sans-one">{{ pilot1 }}</label>
+                    </div>
+                    <div class="row line">
+                        <label class="col-md-4">NAME:&nbsp;</label>
+                        <div class="col-md-8">
+                            <input ng-model="pilot1" class="form-control" maxlength="12">
+                        </div>
+                    </div>
+                    <div class="row line">
+                        <label class="col-md-4">LAPS:&nbsp;</label>
+                        <div class="col-md-8">
+                            <span class="dseg-7-classic">{{ laps1 }}</span>
+                        </div>
+                    </div>
+                    <div class="row line">
+                        <label class="col-md-4">TIME:&nbsp;</label>
+                        <div class="col-md-8">
+                            <span class="dseg-7-classic">{{ time1 }}</span>
+                        </div>
+                    </div>
+                    <div class="row line">
+                        <label class="col-md-4">LATEST:&nbsp;</label>
+                        <div class="col-md-8">
+                            <span class="dseg-7-classic">{{ last1 }}</span>
+                        </div>
+                    </div>
+                    <div class="row line">
+                        <label class="col-md-4">BEST:&nbsp;</label>
+                        <div class="col-md-8">
+                            <span class="dseg-7-classic">{{ best1 }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4">
+                <div class="pilot text-center">
+                    <div><label class="racing-sans-one">NUMBER OF LAPS</label></div>
+                    <div class="row laps">
+                        <button ng-click="(laps < 50) ? (laps = laps + 1) : laps = 50" class="btn btn-primary laps-plus">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                        <span id="laps" class="dseg-7-classic">{{ laps }}</span>
+                        <button ng-click="(laps > 1) ? (laps = laps - 1) : laps = 1" class="btn btn-primary laps-minus">
+                            <i class="fa fa-minus"></i>
+                        </button>  
+                    </div>
+                    <div class="row line div-btn-race-reset">
+                        <div ng-class="{'hidden': running}">
+                            <button ng-click="go()" class="btn btn-success btn-race">
+                                <span>GO!</span>
+                            </button>
+                        </div>
+                        <div ng-class="{'hidden': !running}">
+                            <button ng-click="reset()" class="btn btn-danger btn-reset">
+                                <span>RESET</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div ng-class="{'hidden': !haveWinner}" class="text-center winner">
+                    <label>{{ winner }} WINS!!</label>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4">
+                <div class="pilot">
+                    <div class="text-center">
+                        <label class="racing-sans-one">{{ pilot2 }}</label>
+                    </div>
+                    <div class="row line">
+                        <label class="col-md-4">NAME:&nbsp;</label>
+                        <div class="col-md-8">
+                            <input ng-model="pilot2" class="form-control" maxlength="12">
+                        </div>
+                    </div>
+                    <div class="row line">
+                        <label class="col-md-4">LAPS:&nbsp;</label>
+                        <div class="col-md-8">
+                            <span class="dseg-7-classic">{{ laps2 }}</span>
+                        </div>
+                    </div>
+                    <div class="row line">
+                        <label class="col-md-4">TIME:&nbsp;</label>
+                        <div class="col-md-8">
+                            <span class="dseg-7-classic">{{ time2 }}</span>
+                        </div>
+                    </div>
+                    <div class="row line">
+                        <label class="col-md-4">LATEST:&nbsp;</label>
+                        <div class="col-md-8">
+                            <span class="dseg-7-classic">{{ last2 }}</span>
+                        </div>
+                    </div>
+                    <div class="row line">
+                        <label class="col-md-4">BEST:&nbsp;</label>
+                        <div class="col-md-8">
+                            <span class="dseg-7-classic">{{ best2 }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer text-center">
+            <span>Powered by&nbsp;&nbsp;</span>
+            <img src="images/arduino_logo.png" class="arduino-logo">
+            <img src="images/nodejs_logo.png" class="nodejs-logo">
+            <img src="images/angularjs_logo.png" class="angularjs-logo">
+        </div>
+    </div>
+    
+    <!-- Angular scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/MainController.js"></script>
+</body>  
+</html> 

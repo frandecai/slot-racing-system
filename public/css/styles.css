@@ -1,0 +1,184 @@
+@font-face {
+    font-family: "RacingSansOne";
+    src: url(../fonts/RacingSansOne.ttf);
+}
+
+@font-face {
+    font-family: "DSEG7Classic";
+    src: url(../fonts/DSEG7Classic.woff);
+}
+
+.content {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.title {
+    padding-bottom: 30px;
+}
+
+label {
+    font-size: 20px;
+}
+
+.pilot {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 15px;
+}
+
+.line {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.line label {
+    position: relative;
+    top: 3px;
+}
+
+h1.racing-sans-one {
+    font-family: RacingSansOne;
+    font-size: 50px;
+    margin-top: 0px;
+}
+
+label.racing-sans-one {
+    font-family: RacingSansOne;
+    font-size: 30px;
+}
+
+.line span.dseg-7-classic {
+    position: relative;
+    top: -2px;
+    color: green;
+    font-family: DSEG7Classic;
+    font-size: 25px;
+}
+
+input {
+    font-size: 25px !important;
+}
+
+.laps span.dseg-7-classic {
+    position: relative;
+    top: 10px;
+    color: green;
+    font-family: DSEG7Classic;
+    font-size: 30px;
+}
+
+button.btn.laps-minus {
+    margin-left: 30px;
+}
+
+button.btn.laps-plus {
+    margin-right: 30px;
+}
+
+div.div-btn-race-reset {
+    padding-top: 50px;
+}
+
+button.btn-race {
+    font-size: 25px;
+}
+
+button.btn-reset {
+    font-size: 25px;
+}
+
+div.btn-race>btn.btn-success>span {
+    font-size: 50px;
+}
+
+div.winner {
+    margin-top: 40px;
+}
+
+div.winner label {
+    font-family: RacingSansOne;
+    font-size: 40px;
+}
+
+.footer {
+    padding-top: 40px;
+    font-size: 16px;
+}
+
+.footer img.arduino-logo {
+    width: 40px;
+    height: 30px;
+}
+
+.footer img.nodejs-logo {
+    width: 60px;
+    height: 40px;
+}
+
+.footer img.angularjs-logo {
+    width: 35px;
+    height: 35px;
+}
+
+div.winner label {
+
+    -webkit-animation:colorchange 5s infinite alternate;
+}
+
+@-webkit-keyframes colorchange {
+    0% {
+
+        color: blue;
+    }
+
+    10% {
+
+        color: #8e44ad;
+    }
+
+    20% {
+
+        color: #1abc9c;
+    }
+
+    30% {
+
+        color: #d35400;
+    }
+
+    40% {
+
+        color: blue;
+    }
+
+    50% {
+
+        color: #34495e;
+    }
+
+    60% {
+
+        color: blue;
+    }
+
+    70% {
+
+        color: #2980b9;
+    }
+    80% {
+
+        color: #f1c40f;
+    }
+
+    90% {
+
+        color: #2980b9;
+    }
+
+    100% {
+
+        color: pink;
+    }
+}
